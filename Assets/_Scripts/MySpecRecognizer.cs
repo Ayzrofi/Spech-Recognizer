@@ -53,6 +53,17 @@ public class MySpecRecognizer : MonoBehaviour {
             }
         }
     }
+
+    //private void OnEnable()
+    //{
+    //    if (key != null)
+    //    {
+    //        Recognizer = new KeywordRecognizer(key, confidence);
+    //        Recognizer.OnPhraseRecognized += OnPhraseRecognized;
+    //        Recognizer.Start();
+    //    }
+    //}
+
     void OnPhraseRecognized(PhraseRecognizedEventArgs Sound)
     {
         word = Sound.text;
@@ -179,7 +190,8 @@ public class MySpecRecognizer : MonoBehaviour {
         AudioSc.PlayOneShot(WinClip);
         anim.SetTrigger("end");
         yield return new WaitForSeconds(1.6f);
-        SceneManager.LoadScene(Application.loadedLevel + 1);
+        //SceneManager.LoadScene(Application.loadedLevel + 1);
+        SceneController.TheInstanceOfSceneController.LoadNewScene();
         Destroy(this.gameObject);
     }
     //IEnumerator playGame()

@@ -369,7 +369,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1268485239935176, guid: 9f523bd980a04fa43a66f5565392d246, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114841449588220492, guid: 9f523bd980a04fa43a66f5565392d246,
         type: 2}
@@ -496,6 +496,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &972398543
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4318390445670692, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318390445670692, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318390445670692, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318390445670692, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318390445670692, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318390445670692, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318390445670692, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318390445670692, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430938374210162, guid: 95495dc90d63fd948a65c65d1d440322,
+        type: 2}
+      propertyPath: SisaPertanyaan
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430938374210162, guid: 95495dc90d63fd948a65c65d1d440322,
+        type: 2}
+      propertyPath: PertanyaanYgDitampilkan
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1041580435
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This Game Use Your Sound To Play It
+  m_Text: This Game Use Your Voice To Play It
 --- !u!222 &1133232824
 CanvasRenderer:
   m_ObjectHideFlags: 0

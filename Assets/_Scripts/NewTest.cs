@@ -5,11 +5,9 @@ using UnityEngine.Windows.Speech;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
-[RequireComponent (typeof(AudioSource))]
-public class MenuSpeak : MonoBehaviour
-{
+public class NewTest : MonoBehaviour {
     [Header("Command List")]
-    public string[] key;
+    public List<string> key = new List<string>();
     [Header("Level Speak Confidence")]
     public ConfidenceLevel confidence = ConfidenceLevel.Medium;
     [Header("Text Result")]
@@ -21,44 +19,67 @@ public class MenuSpeak : MonoBehaviour
     public AudioClip PlayClip;
 
     protected PhraseRecognizer Recognizer;
+    //private KeywordRecognizer Recognizer;
     protected string word;
-
+    private void Awake()
+    {
+        key.Add("ball");
+    }
     private void Start()
     {
         if (key != null)
         {
-            Recognizer = new KeywordRecognizer(key, confidence);
+            Recognizer = new KeywordRecognizer(key.ToArray(), confidence);
+
             Recognizer.OnPhraseRecognized += OnPhraseRecognized;
             Recognizer.Start();
         }
     }
+    private void Update()
+    {
+        //if (key != null)
+        //    Recognizer = new KeywordRecognizer(key.ToArray(), confidence);
+    }
     void OnPhraseRecognized(PhraseRecognizedEventArgs Sound)
     {
+        //StartCoroutine(UlangRecognitions(Sound.text));
+
         word = Sound.text;
-        // to Play The Game 
-        if (word == "play")
-        {
-            StartCoroutine(playGame());
-        }
-        else
-        // for exiting application
-        if (word == "exit")
-        {
-            Debug.Log("Quit Game");
-            Application.Quit();
-        }
+
+        //// to Play The Game 
+        //if (word == "play")
+        //{
+        //    StartCoroutine(playGame());
+        //}
+        //else
+        //// for exiting application
+        //if (word == "exit")
+        //{
+        //    Debug.Log("Quit Game");
+        //    Application.Quit();
+        //}
         // display your voice in game 
         Result.text = "You Say :<b> " + word + "</b> ";
     }// end of functions OnPhraseRecognized
+
+    IEnumerator UlangRecognitions(string txt)
+    {
+
+        Recognizer.OnPhraseRecognized -= OnPhraseRecognized;
+        Recognizer.Stop();
+        yield return new WaitForSeconds(.5f);
+        key.Add(txt);
+        Recognizer = new KeywordRecognizer(key.ToArray(), confidence);
+        Recognizer.OnPhraseRecognized += OnPhraseRecognized;
+        Recognizer.Start();
+    }
+
     IEnumerator playGame()
     {
         anim.SetTrigger("end");
         audio.PlayOneShot(PlayClip);
         yield return new WaitForSeconds(1.6f);
-        //SceneManager.LoadScene("Game_1");
-        SceneController.TheInstanceOfSceneController.WhatSceneToLoad = 3;
-        SceneController.TheInstanceOfSceneController.LoadNewScene();
-
+        SceneManager.LoadScene("Game_1");
         Destroy(this.gameObject);
     }
     // check if application quit
@@ -76,12 +97,3 @@ public class MenuSpeak : MonoBehaviour
         }
     }
 }// end of Class
-
-
-
-
-
-
-
-
-
