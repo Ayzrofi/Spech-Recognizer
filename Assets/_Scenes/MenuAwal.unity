@@ -535,16 +535,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114430938374210162, guid: 95495dc90d63fd948a65c65d1d440322,
-        type: 2}
-      propertyPath: SisaPertanyaan
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114430938374210162, guid: 95495dc90d63fd948a65c65d1d440322,
-        type: 2}
-      propertyPath: PertanyaanYgDitampilkan
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95495dc90d63fd948a65c65d1d440322, type: 2}
   m_IsPrefabParent: 0

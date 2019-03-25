@@ -32,6 +32,7 @@ public class MySpecRecognizer : MonoBehaviour {
 
     private void Start()
     {
+        Debug.Log(PlayerPrefs.GetInt("Animal"));
         ScoreText.text = "Score : "+ scoreHolder.PlayerScore.ToString();
         LevelComplite = false;
         if (key != null)
@@ -156,11 +157,14 @@ public class MySpecRecognizer : MonoBehaviour {
         {
             Debug.Log("correct");
             AudioSc.PlayOneShot(TrueClip);
-            scoreHolder.PlayerScore += 10;
-            if (scoreHolder.PlayerScore > PlayerPrefs.GetInt("HighScore"))
-            {
-                PlayerPrefs.SetInt("HighScore",scoreHolder.PlayerScore);
-            }
+            //scoreHolder.PlayerScore += 10;
+            //if (scoreHolder.PlayerScore > PlayerPrefs.GetInt("HighScore"))
+            //{
+            //    PlayerPrefs.SetInt("HighScore",scoreHolder.PlayerScore);
+            //}
+            SceneController.MyScore += 10;
+            PlayerPrefs.SetInt(SceneController.TheInstanceOfSceneController.JenisScene[SceneController.TheInstanceOfSceneController.WhatSceneToLoad].SceneNameType, SceneController.MyScore);
+
             ScoreText.text = "Score : " +scoreHolder.PlayerScore.ToString();
             finalScoreWin.text = scoreHolder.PlayerScore.ToString();
             PopUpAnim.SetTrigger("win");

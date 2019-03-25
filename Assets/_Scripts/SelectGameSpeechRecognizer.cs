@@ -5,9 +5,9 @@ using UnityEngine.Windows.Speech;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
-[RequireComponent (typeof(AudioSource))]
-public class MenuSpeak : MonoBehaviour
-{
+
+public class SelectGameSpeechRecognizer : MonoBehaviour {
+
     [Header("Command List")]
     public string[] key;
     [Header("Level Speak Confidence")]
@@ -35,9 +35,34 @@ public class MenuSpeak : MonoBehaviour
     void OnPhraseRecognized(PhraseRecognizedEventArgs Sound)
     {
         word = Sound.text;
-        // to Play The Game 
-        if (word == "play")
+
+        if (word == "alphabet")
         {
+            SceneController.TheInstanceOfSceneController.WhatSceneToLoad = 0;
+            StartCoroutine(playGame());
+        }
+        else
+       if (word == "animal")
+        {
+            SceneController.TheInstanceOfSceneController.WhatSceneToLoad = 1;
+            StartCoroutine(playGame());
+        }
+        else
+         if (word == "fruit")
+        {
+            SceneController.TheInstanceOfSceneController.WhatSceneToLoad = 2;
+            StartCoroutine(playGame());
+        }
+        else
+         if (word == "number")
+        {
+            SceneController.TheInstanceOfSceneController.WhatSceneToLoad = 3;
+            StartCoroutine(playGame());
+        }
+        else
+        if (word == "object")
+        {
+            SceneController.TheInstanceOfSceneController.WhatSceneToLoad = 4;
             StartCoroutine(playGame());
         }
         else
@@ -55,9 +80,9 @@ public class MenuSpeak : MonoBehaviour
         anim.SetTrigger("end");
         audio.PlayOneShot(PlayClip);
         yield return new WaitForSeconds(1.6f);
-        SceneManager.LoadScene("SelectGame");
+        //SceneManager.LoadScene("Game_1");
         //SceneController.TheInstanceOfSceneController.WhatSceneToLoad = 3;
-        //SceneController.TheInstanceOfSceneController.LoadNewScene();
+        SceneController.TheInstanceOfSceneController.LoadNewScene();
 
         Destroy(this.gameObject);
     }
@@ -76,12 +101,3 @@ public class MenuSpeak : MonoBehaviour
         }
     }
 }// end of Class
-
-
-
-
-
-
-
-
-

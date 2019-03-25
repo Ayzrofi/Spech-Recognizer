@@ -361,8 +361,8 @@ RectTransform:
   - {fileID: 1133232822}
   - {fileID: 1717231915}
   - {fileID: 130657300}
-  - {fileID: 335207569}
   - {fileID: 358001253}
+  - {fileID: 335207569}
   m_Father: {fileID: 1041580439}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -409,11 +409,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224227714460942156, guid: 9f523bd980a04fa43a66f5565392d246,
     type: 2}
   m_PrefabInternal: {fileID: 393678201}
---- !u!95 &335207570 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95159236253914304, guid: 9f523bd980a04fa43a66f5565392d246,
-    type: 2}
-  m_PrefabInternal: {fileID: 393678201}
 --- !u!1 &358001252
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +437,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000799, y: 1.0000799, z: 1.0000799}
   m_Children: []
   m_Father: {fileID: 146471081}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -533,7 +528,7 @@ Prefab:
     - target: {fileID: 224227714460942156, guid: 9f523bd980a04fa43a66f5565392d246,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224227714460942156, guid: 9f523bd980a04fa43a66f5565392d246,
         type: 2}
@@ -587,7 +582,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1268485239935176, guid: 9f523bd980a04fa43a66f5565392d246, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114841449588220492, guid: 9f523bd980a04fa43a66f5565392d246,
         type: 2}
@@ -597,6 +592,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f523bd980a04fa43a66f5565392d246, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &393678202 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95159236253914304, guid: 9f523bd980a04fa43a66f5565392d246,
+    type: 2}
+  m_PrefabInternal: {fileID: 393678201}
 --- !u!1 &624740685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,9 +1392,8 @@ GameObject:
   - component: {fileID: 1702022749}
   - component: {fileID: 1702022750}
   - component: {fileID: 1702022748}
-  - component: {fileID: 1702022751}
   m_Layer: 0
-  m_Name: SpeakRecognizer
+  m_Name: Speech Recognizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1406,22 +1405,21 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1702022747}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98b78edce3683e458e747c783960cb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f16ef990e1ebc142b538ead86b699ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   key:
-  - play
   - exit
-  - animal
-  - number
-  - fruit
   - alphabet
+  - animal
+  - fruit
+  - number
   - object
   confidence: 2
   Result: {fileID: 1661926561}
-  anim: {fileID: 335207570}
+  anim: {fileID: 393678202}
   audio: {fileID: 1702022750}
   PlayClip: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
 --- !u!4 &1702022749
@@ -1517,23 +1515,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &1702022751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1702022747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 206e47dd8ce6ea54491c83e653f2ef17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: []
-  confidence: 1
-  Result: {fileID: 0}
-  anim: {fileID: 0}
-  audio: {fileID: 0}
-  PlayClip: {fileID: 0}
 --- !u!1 &1703106787
 GameObject:
   m_ObjectHideFlags: 0

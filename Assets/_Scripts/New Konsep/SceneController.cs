@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
     public static SceneController TheInstanceOfSceneController;
+    public static int MyScore;
+
     public int WhatSceneToLoad;
 
     public int JumlahSemuaPertanyaan = 3;

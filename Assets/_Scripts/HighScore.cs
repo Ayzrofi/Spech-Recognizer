@@ -5,6 +5,6 @@ public class HighScore : MonoBehaviour {
 
     public Text HighScoreText;
     void Start () {
-        HighScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
+        HighScoreText.text = PlayerPrefs.GetInt("Animal").ToString();
 	}
 }
